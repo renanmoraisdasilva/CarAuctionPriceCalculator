@@ -1,0 +1,6 @@
+@CarAuctionPriceCalculator.API_HostAddress = http://localhost:5126
+
+GET {{CarAuctionPriceCalculator.API_HostAddress}}
+Accept: application/json
+
+###

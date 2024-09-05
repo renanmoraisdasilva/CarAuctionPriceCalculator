@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1E661D82-1187-4128-B756-FFEA768DE089}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuctionPriceCalculator.API", "src\CarAuctionPriceCalculator.API\CarAuctionPriceCalculator.API.csproj", "{D3A9313F-6048-4600-9F2F-DF3BF1777AC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC7E4C07-6471-4265-BB82-D76471A6ED2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuctionPriceCalculator.Domain", "src\CarAuctionPriceCalculator.Domain\CarAuctionPriceCalculator.Domain.csproj", "{70895EA3-F533-457A-B05C-11C92AE15604}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuctionPriceCalculator.Application", "src\CarAuctionPriceCalculator.Application\CarAuctionPriceCalculator.Application.csproj", "{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuctionPriceCalculator.Infrastructure", "src\CarAuctionPriceCalculator.Infrastructure\CarAuctionPriceCalculator.Infrastructure.csproj", "{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3A9313F-6048-4600-9F2F-DF3BF1777AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A9313F-6048-4600-9F2F-DF3BF1777AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A9313F-6048-4600-9F2F-DF3BF1777AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A9313F-6048-4600-9F2F-DF3BF1777AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70895EA3-F533-457A-B05C-11C92AE15604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70895EA3-F533-457A-B05C-11C92AE15604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70895EA3-F533-457A-B05C-11C92AE15604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70895EA3-F533-457A-B05C-11C92AE15604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3A9313F-6048-4600-9F2F-DF3BF1777AC8} = {1E661D82-1187-4128-B756-FFEA768DE089}
+		{70895EA3-F533-457A-B05C-11C92AE15604} = {1E661D82-1187-4128-B756-FFEA768DE089}
+		{3C73B557-BE74-4B24-9E41-3E8462FB1BDB} = {1E661D82-1187-4128-B756-FFEA768DE089}
+		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5} = {1E661D82-1187-4128-B756-FFEA768DE089}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {60B906D1-022F-4681-AA76-54B79C862481}
+	EndGlobalSection
+EndGlobal
