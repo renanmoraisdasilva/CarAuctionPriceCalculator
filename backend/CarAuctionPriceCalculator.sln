@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuctionPriceCalculator.A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BC7E4C07-6471-4265-BB82-D76471A6ED2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuctionPriceCalculator.Domain", "src\CarAuctionPriceCalculator.Domain\CarAuctionPriceCalculator.Domain.csproj", "{70895EA3-F533-457A-B05C-11C92AE15604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuctionPriceCalculator.Domain", "src\CarAuctionPriceCalculator.Domain\CarAuctionPriceCalculator.Domain.csproj", "{70895EA3-F533-457A-B05C-11C92AE15604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuctionPriceCalculator.Application", "src\CarAuctionPriceCalculator.Application\CarAuctionPriceCalculator.Application.csproj", "{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuctionPriceCalculator.Application", "src\CarAuctionPriceCalculator.Application\CarAuctionPriceCalculator.Application.csproj", "{3C73B557-BE74-4B24-9E41-3E8462FB1BDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuctionPriceCalculator.Infrastructure", "src\CarAuctionPriceCalculator.Infrastructure\CarAuctionPriceCalculator.Infrastructure.csproj", "{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuctionPriceCalculator.Infrastructure", "src\CarAuctionPriceCalculator.Infrastructure\CarAuctionPriceCalculator.Infrastructure.csproj", "{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuctionPriceCalculator.ApplicationTests", "test\CarAuctionPriceCalculator.ApplicationTests\CarAuctionPriceCalculator.ApplicationTests.csproj", "{AD3BD81C-7C7C-46F7-AA8C-E9B598858943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3BD81C-7C7C-46F7-AA8C-E9B598858943}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3BD81C-7C7C-46F7-AA8C-E9B598858943}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3BD81C-7C7C-46F7-AA8C-E9B598858943}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3BD81C-7C7C-46F7-AA8C-E9B598858943}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{70895EA3-F533-457A-B05C-11C92AE15604} = {1E661D82-1187-4128-B756-FFEA768DE089}
 		{3C73B557-BE74-4B24-9E41-3E8462FB1BDB} = {1E661D82-1187-4128-B756-FFEA768DE089}
 		{1676EEA1-5CFF-4B7E-98A2-E6008A5E2EB5} = {1E661D82-1187-4128-B756-FFEA768DE089}
+		{AD3BD81C-7C7C-46F7-AA8C-E9B598858943} = {BC7E4C07-6471-4265-BB82-D76471A6ED2F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60B906D1-022F-4681-AA76-54B79C862481}
