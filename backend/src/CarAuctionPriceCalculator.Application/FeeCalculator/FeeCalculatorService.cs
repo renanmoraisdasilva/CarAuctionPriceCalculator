@@ -54,10 +54,13 @@ public class FeeCalculatorService : IFeeCalculatorService
             var (calculatedFee, appliedFees) = CalculateFee(vehiclePrice, vehicleTypeId, fee);
             if (calculatedFee == 0)
                 continue;
+
+            calculatedFee = Math.Round(calculatedFee, 2);
             totalFee += calculatedFee;
             feeDetails.Add((fee, calculatedFee));
         }
 
+        totalFee = Math.Round(totalFee, 2);
         return (totalFee, feeDetails);
     }
 
