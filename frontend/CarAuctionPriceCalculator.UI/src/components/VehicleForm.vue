@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { useVehicleForm } from '@/composables/useVehicleForm'
+import InputText from 'primevue/inputtext'
+import IconField from 'primevue/iconfield'
+import InputIcon from 'primevue/inputicon'
 const { basePrice, vehicleType, vehicleTypes, formattedTotalCost, formattedFees } = useVehicleForm()
 </script>
 
@@ -7,7 +10,10 @@ const { basePrice, vehicleType, vehicleTypes, formattedTotalCost, formattedFees 
   <form class="vehicle-form">
     <div class="form-group">
       <label for="base-price">Vehicle Base Price:</label>
-      <input id="base-price" type="text" v-model="basePrice" class="input-number" />
+      <IconField>
+        <InputIcon class="pi pi-dollar" />
+        <InputText v-model="basePrice" placeholder="Search" />
+      </IconField>
     </div>
     <div class="form-group">
       <label for="vehicle-type">Vehicle Type:</label>
