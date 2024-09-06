@@ -16,6 +16,13 @@ public class CarAuctionController(ICarAuctionService carAuctionService) : Contro
         return Ok(fees);
     }
 
+    [HttpGet("vehicleTypes")]
+    public async Task<IActionResult> GetVehicleTypesAsync()
+    {
+        var vehicleTypes = await carAuctionService.GetVehicleTypesAsync();
+        return Ok(vehicleTypes);
+    }
+
     [HttpPost("calculate")]
     public async Task<IActionResult> CalculatePriceAsync([FromBody] CalculatePriceRequest request)
     {

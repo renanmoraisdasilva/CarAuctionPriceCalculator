@@ -26,17 +26,3 @@ public class VehicleType
     public int Id { get; set; }
     public string Name { get; set; } = default!;
 }
-
-//public enum FeeType
-//{
-//    Buyer,
-//    Seller,
-//    Association,
-//    Storage
-//}
-
-//public enum VehicleType
-//{
-//    Common,
-//    Luxury
-//}

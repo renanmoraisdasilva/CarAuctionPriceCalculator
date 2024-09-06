@@ -13,4 +13,9 @@ internal class CarAuctionRepository(CarAuctionDbContext dbContext) : ICarAuction
             .Include(f => f.VehicleType)
             .ToListAsync();
     }
+
+    public async Task<IEnumerable<VehicleType>> GetVehicleTypesAsync()
+    {
+        return await dbContext.VehicleTypes.ToListAsync();
+    }
 }

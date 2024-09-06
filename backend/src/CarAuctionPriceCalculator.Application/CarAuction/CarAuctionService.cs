@@ -21,4 +21,9 @@ public class CarAuctionService(ICarAuctionRepository carAuctionRepository, IFeeC
         return (vehiclePrice + totalFee, feeDetailDtos);
     }
 
+    public async Task<IEnumerable<VehicleType>> GetVehicleTypesAsync()
+    {
+        return await carAuctionRepository.GetVehicleTypesAsync();
+    }
+
 }
