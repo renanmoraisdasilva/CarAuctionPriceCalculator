@@ -3,25 +3,25 @@ import { useVehicleForm } from '@/composables/useVehicleForm'
 import InputText from 'primevue/inputtext'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
-const { basePrice, vehicleType, vehicleTypes, formattedTotalCost, formattedFees } = useVehicleForm()
+import Dropdown from 'primevue/dropdown'
+import Toast from 'primevue/toast'
+const { basePrice, selectedVehicleType, vehicleTypes, formattedTotalCost, formattedFees } =
+  useVehicleForm()
 </script>
 
 <template>
+  <Toast />
   <form class="vehicle-form">
     <div class="form-group">
       <label for="base-price">Vehicle Base Price:</label>
       <IconField>
         <InputIcon class="pi pi-dollar" />
-        <InputText v-model="basePrice" placeholder="Search" />
+        <InputText type="number" v-model="basePrice" placeholder="0.00" />
       </IconField>
     </div>
     <div class="form-group">
       <label for="vehicle-type">Vehicle Type:</label>
-      <select id="vehicle-type" v-model="vehicleType">
-        <option v-for="type in vehicleTypes" :key="type.id" :value="type.id">
-          {{ type.name }}
-        </option>
-      </select>
+      <Dropdown id="vehicle-type" v-model="selectedVehicleType" :options="vehicleTypes" optionLabel="name" optionValue="id" placeholder="Select a Vehicle Type" />
     </div>
     <div class="fees-section">
       <h3>Fees:</h3>
@@ -57,13 +57,12 @@ label {
   color: #333;
 }
 
-input,
-select {
+input {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 .fees-section {
@@ -83,8 +82,9 @@ select {
   background-color: #fff;
   padding: 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   margin-bottom: 0.5rem;
+  box-shadow: 0px 0px #0000,0px 0px #0000,0px 1px 2px 0px rgba(18,18,23,0.05);
 }
 
 .total-cost {

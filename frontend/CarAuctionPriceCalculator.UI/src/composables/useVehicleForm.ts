@@ -1,52 +1,73 @@
-// src/composables/useVehicleForm.ts
 import { ref, watch, computed } from 'vue'
-import axios from 'axios'
+import axios, { AxiosError } from 'axios'
 import debounce from 'lodash/debounce'
 import type { FeesResponse } from '@/types/feeTypes'
+import { useToast } from 'primevue/usetoast'
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export const useVehicleForm = () => {
   const basePrice = ref(0)
-  const vehicleType = ref('')
+  const selectedVehicleType = ref('')
   const vehicleTypes = ref<{ id: number; name: string }[]>([])
   const fees = ref<{ id: number; name: string; amount: number }[]>([])
   const totalCost = ref(0)
+  const errorMessages = ref<string[]>([])
+  const toast = useToast()
 
   const fetchVehicleTypes = async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/CarAuction/vehicleTypes`)
       vehicleTypes.value = response.data
     } catch (error) {
-      console.error('Error fetching vehicle types:', error)
+      handleError(error, 'Error fetching vehicle types')
     }
   }
 
   const fetchFees = async () => {
-    if (basePrice.value > 0 && vehicleType.value) {
+    if (basePrice.value > 0 && selectedVehicleType.value) {
       try {
         const response = await axios.post<FeesResponse>(`${API_BASE_URL}/CarAuction/calculate`, {
           vehiclePrice: basePrice.value,
-          vehicleTypeId: vehicleType.value
+          vehicleTypeId: selectedVehicleType.value
         })
-        totalCost.value = response.data.price
-        fees.value = response.data.fees.map((fee) => ({
-          id: fee.id,
-          name: fee.feeType.name,
-          amount: fee.calculatedFee
-        }))
+        updateFees(response.data)
+        errorMessages.value = []
       } catch (error) {
-        console.error('Error fetching fees:', error)
+        handleError(error, 'Error fetching fees')
       }
     } else {
-      totalCost.value = 0
-      fees.value = []
+      resetFees()
+    }
+  }
+
+  const updateFees = (data: FeesResponse) => {
+    totalCost.value = data.price
+    fees.value = data.fees.map((fee) => ({
+      id: fee.id,
+      name: fee.feeType.name,
+      amount: fee.calculatedFee
+    }))
+  }
+
+  const resetFees = () => {
+    totalCost.value = 0
+    fees.value = []
+  }
+
+  const handleError = (error: unknown, defaultMessage: string) => {
+    console.error(defaultMessage, error)
+    if (error instanceof AxiosError && error.response?.data?.errors) {
+      errorMessages.value = Object.values(error.response.data.errors).flat() as string[]
+      errorMessages.value.forEach((message) => {
+        toast.add({ severity: 'error', summary: 'Error', detail: message, life: 3000 })
+      })
     }
   }
 
   const debouncedFetchFees = debounce(fetchFees, 300)
 
-  watch([basePrice, vehicleType], () => {
+  watch([basePrice, selectedVehicleType], () => {
     debouncedFetchFees()
   })
 
@@ -69,13 +90,14 @@ export const useVehicleForm = () => {
 
   return {
     basePrice,
-    vehicleType,
+    selectedVehicleType,
     vehicleTypes,
     fees,
     totalCost,
     formattedTotalCost,
     formattedFees,
     fetchVehicleTypes,
-    fetchFees
+    fetchFees,
+    errorMessages
   }
 }
