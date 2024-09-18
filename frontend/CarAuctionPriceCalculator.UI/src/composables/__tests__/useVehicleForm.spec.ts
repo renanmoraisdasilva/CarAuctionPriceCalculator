@@ -1,8 +1,14 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useVehicleForm } from '../useVehicleForm'
 import axios from 'axios'
+import { useToast } from 'primevue/usetoast'
 
 vi.mock('axios')
+vi.mock('primevue/usetoast', () => ({
+  useToast: vi.fn(() => ({
+    add: vi.fn()
+  }))
+}))
 
 const mockedAxios = vi.mocked(axios, true)
 
@@ -33,7 +39,7 @@ describe('useVehicleForm', () => {
     mockedAxios.post.mockResolvedValue({ data: mockFees })
 
     composable.basePrice.value = 398
-    composable.vehicleType.value = '1'
+    composable.selectedVehicleType.value = '1'
 
     await composable.fetchFees()
 
