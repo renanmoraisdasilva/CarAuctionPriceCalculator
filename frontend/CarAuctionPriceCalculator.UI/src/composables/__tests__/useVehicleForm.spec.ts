@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useVehicleForm } from '../useVehicleForm'
 import axios from 'axios'
-import { useToast } from 'primevue/usetoast'
 
 vi.mock('axios')
 vi.mock('primevue/usetoast', () => ({
